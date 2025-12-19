@@ -17,8 +17,8 @@ Ce projet est une application web interactive permettant d'estimer le prix d'un 
 - Persistance du modèle : Joblib
 
 # Structure du Projet
-- `app.py` : Le code de l'interface utilisateur Streamlit.
-- `train_model.py` : Script pour entraîner l'IA et générer le fichier du modèle.
-- `mon_modele.joblib` : Le "cerveau" de l'IA sauvegardé et compressé.
+- `esmelimmobilier.py` : Le code de l'interface utilisateur Streamlit.
+- `esmel.py` : Script pour entraîner l'IA et générer le fichier du modèle.
+- `esmel_modele.joblib` : Le "cerveau" de l'IA sauvegardé et compressé.
 - `requirements.txt` : Liste des bibliothèques nécessaires au déploiement.
 
