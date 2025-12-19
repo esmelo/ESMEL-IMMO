@@ -3,7 +3,6 @@ import joblib
 import os
 import numpy as np
 
-# Configuration de la page
 st.set_page_config(page_title="𝐄𝐒𝐌𝐄𝐋 IMMO™", layout="centered")
 
 @st.cache_resource
@@ -63,4 +62,5 @@ else:
             
         st.balloons()
         st.success('✅ Estimation terminée ! Merci d\'utiliser 𝐄𝐒𝐌𝐄𝐋 IMMO™.')
+
         
