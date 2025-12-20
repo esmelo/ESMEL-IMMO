@@ -3,6 +3,7 @@ import joblib
 import os
 import numpy as np
 
+st.markdown('<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">', unsafe_allow_html=True)
 st.set_page_config(page_title="𝐄𝐒𝐌𝐄𝐋 IMMO™", layout="centered", page_icon="🏠")
 
 @st.cache_resource
@@ -90,4 +91,5 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
   
+
 
