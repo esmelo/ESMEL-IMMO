@@ -34,9 +34,9 @@ else:
     with col2:
         st.subheader("🏗️ La Maison")
         age = st.slider("Âge de la maison", 1, 52, 28)
-        rms = st.slider("Nombre de pièces", 1.0, 15.0, 5.0)
-        brs = st.slider("Nombre de chambres", 1.0, 10.0, 1.0)
-        occ = st.slider("Occupants par foyer", 1.0, 6.0, 3.0)
+        rms = st.slider("Nombre de pièces", 1, 15, 5)
+        brs = st.slider("Nombre de chambres", 1, 10, 1)
+        occ = st.slider("Capacité d'occupation", 1, 6, 3)
 
     
     st.write("") 
@@ -62,5 +62,18 @@ else:
             
         st.balloons()
         st.success('✅ Estimation terminée ! Merci d\'utiliser 𝐄𝐒𝐌𝐄𝐋 IMMO™.')
+        st.divider() 
+Par Kouton Vignon, M1 Data science UFR-MI Université Félix Houphouët Boigny, heberger par Streamlit")
+        st.markdown("---")
+        st.markdown(
+            """
+            <div style="text-align: center;">
+            <p>Besoin d'aide ? <a href="mailto:esmelyann@gmail.com">Contactez-nous</a></p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
 
         
+
