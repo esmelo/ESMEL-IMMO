@@ -62,8 +62,8 @@ else:
             
         st.balloons()
         st.success('✅ Estimation terminée ! Merci d\'utiliser 𝐄𝐒𝐌𝐄𝐋 IMMO™.')
-        st.divider() 
-Par Kouton Vignon, M1 Data science UFR-MI Université Félix Houphouët Boigny, heberger par Streamlit")
+        st.divider()
+        st.caption("© 2025 - CV Pro Par Kouton Vignon, M1 Data science UFR-MI Université Félix Houphouët Boigny, heberger par Streamlit")
         st.markdown("---")
         st.markdown(
             """
@@ -76,4 +76,5 @@ Par Kouton Vignon, M1 Data science UFR-MI Université Félix Houphouët Boigny, 
 
 
         
+
 
