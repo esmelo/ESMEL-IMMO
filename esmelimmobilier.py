@@ -76,7 +76,7 @@ footer = """
 }
 </style>
 <div class="footer">
-    <p>© 2025 <b>𝐄𝐒𝐌𝐄𝐋 IMMO™</b> | Expert en estimation immobilière par IA | 📍 Abidjan, CI</p>
+    <p>© 2025- CV Pro par <b>𝐄𝐒𝐌𝐄𝐋 IMMO™</b> |Créer et entraîner par Kouton Vignon Esmel, M1 Data science & IA à l'UFR-MI de l'Université Félix Houphouët-Boigny. Contact : esmelyann@gmail.com / +225 0505411990 (Whatsapp et appel) | ⚠️Modèle basé sur les realités californiene | 📍 Abidjan, CI</p>
 </div>
 """
 st.markdown(footer, unsafe_allow_html=True)
@@ -90,3 +90,4 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
   
+
