@@ -10,7 +10,7 @@ Ce projet est une application web interactive permettant d'estimer le prix d'un 
 - Modèle Pré-entraîné : Chargement rapide du modèle via Joblib (pas de ré-entraînement nécessaire au lancement).
 
 # Stack Technique
-- Langage : Python 3.x
+- Langage : Python 3.11
 - Machine Learning : Scikit-Learn (Random Forest Regressor)
 - Interface Web : Streamlit
 - Traitement de données : Pandas, Numpy
