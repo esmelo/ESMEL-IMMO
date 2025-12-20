@@ -62,19 +62,26 @@ else:
             
         st.balloons()
         st.success('✅ Estimation terminée ! Merci d\'utiliser 𝐄𝐒𝐌𝐄𝐋 IMMO™.')
-        st.divider()
-        st.caption("© 2025 - CV Pro Par Kouton Vignon, M1 Data science UFR-MI Université Félix Houphouët Boigny, heberger par Streamlit")
-        st.markdown("---")
-        st.markdown(
-            """
-            <div style="text-align: center;">
-            <p>Besoin d'aide ? <a href="mailto:esmelyann@gmail.com">Contactez-nous</a></p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+        footer = """
+        <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid 
+        #e6e6e6;
+        }
+        </style>
+        <div class="footer">
+            <p>🚀 © 2025 - CV Pro par Kouton Vignon Esmel, M1 Data Science, UFRMI Université Félix Houphouët Boigny. Contact : esmelyann@gmail.com / +225 0505411990, avec ❤️ pour booster votre carrière</p>
+        </div>
+        """
+        st.markdown(footer, unsafe_allow_html=True)
 
 
         
-
-
