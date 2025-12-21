@@ -62,58 +62,55 @@ else:
         st.balloons()
         st.success('✅ Estimation terminée !')
 
-footer_style = """
+footer_luxe = """
 <style>
-footer {visibility: hidden !important;}
-header {visibility: hidden !important;}
-#MainMenu {visibility: hidden !important;}
-.stAppDeployButton {display: none !important;}
-[data-testid="stHeader"] {display: none !important;}
-
-.block-container {
-    padding-top: 1rem !important;
-    padding-bottom: 6rem !important;
+/* Cache tout ce qui est possible */
+header, footer, .stAppDeployButton, #MainMenu {
+    display: none !important;
+    visibility: hidden !important;
 }
 
+/* On remonte le contenu pour ne pas laisser de vide en haut */
+.block-container {
+    padding-top: 0px !important;
+    margin-top: -30px !important;
+    padding-bottom: 100px !important;
+}
+
+/* NOTRE BARRE QUI RECOUVRE TOUT EN BAS */
 .custom-footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #0E1117;
+    height: 50px; /* Hauteur suffisante pour cacher le logo en dessous */
+    background-color: #0E1117; /* Doit être la même couleur que le fond */
     color: #D4AF37;
     text-align: center;
-    padding: 15px 0;
+    line-height: 50px;
     font-size: 14px;
     border-top: 2px solid #D4AF37;
-    z-index: 999999;
+    z-index: 999999999 !important; /* Priorité maximale */
 }
 </style>
 <div class="custom-footer">
-    <p>© 2025 <b>𝐄𝐒𝐌𝐄𝐋 IMMO™</b> | L'Excellence Immobilière | 📍 Abidjan, CI</p>
+    © 2025 <b>𝐄𝐒𝐌𝐄𝐋 IMMO™</b> | L'Excellence Immobilière | 📍 Abidjan, CI
 </div>
 """
-st.markdown(footer_style, unsafe_allow_html=True)
+st.markdown(footer_luxe, unsafe_allow_html=True)
 
+# Script de secours pour tenter de supprimer l'élément par son tag
 components.html(
     """
     <script>
-    const removeElements = () => {
-        const doc = window.parent.document;
-        const selectors = [
-            'footer',
-            'header',
-            '#MainMenu',
-            '.stAppDeployButton',
-            '[data-testid="stHeader"]',
-            '[data-testid="stStatusWidget"]'
-        ];
-        selectors.forEach(s => {
-            const el = doc.querySelector(s);
-            if (el) el.style.display = 'none';
-        });
-    };
-    setInterval(removeElements, 500);
+    const hideSreamlit = () => {
+        const pDoc = window.parent.document;
+        const footer = pDoc.getElementsByTagName("footer")[0];
+        if (footer) footer.style.display = "none";
+        const header = pDoc.getElementsByTagName("header")[0];
+        if (header) header.style.display = "none";
+    }
+    setInterval(hideSreamlit, 300);
     </script>
     """,
     height=0,
