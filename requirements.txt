@@ -1,5 +1,8 @@
-streamlit
+fastapi
+uvicorn
+python-multipart
+jinja2
+pymupdf
+sentence-transformers
 scikit-learn
-joblib
 pandas
-numpy
