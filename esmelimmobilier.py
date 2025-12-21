@@ -63,10 +63,21 @@ else:
 
 footer = """
 <style>
-#MainMenu {visibility: hidden;}
-header {visibility: hidden;}
-footer {visibility: hidden;}
-.stAppDeployButton {display: none;}
+div[data-testid="stToolbar"], 
+div[data-testid="stDecoration"], 
+div[data-testid="stStatusWidget"], 
+#MainMenu, 
+header, 
+footer {
+    visibility: hidden;
+    height: 0%;
+    display: none;
+}
+
+.block-container {
+    padding-top: 0rem;
+    padding-bottom: 5rem;
+}
 
 .footer {
     position: fixed;
@@ -79,11 +90,11 @@ footer {visibility: hidden;}
     padding: 10px 0;
     font-size: 14px;
     border-top: 2px solid #D4AF37;
-    z-index: 100;
+    z-index: 1000;
 }
 </style>
 <div class="footer">
-    <p>© 2025 <b>𝐄𝐒𝐌𝐄𝐋 IMMO™</b> | Modèle basé sur les réalité de la ville de californie.| Par Kouton Vignon Esmel, M1 Data science & IA, à l'UFR-MI de l'Université Félix Houphouet-Boigny 📍 Abidjan, CI</p>
+    <p>© 2025 <b>𝐄𝐒𝐌𝐄𝐋 IMMO™</b> | L'Excellence Immobilière | 📍 Abidjan, CI</p>
 </div>
 """
 st.markdown(footer, unsafe_allow_html=True)
