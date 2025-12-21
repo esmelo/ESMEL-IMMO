@@ -72,7 +72,7 @@ header, footer, .stAppDeployButton, #MainMenu {
 .block-container {
     padding-top: 0px !important;
     margin-top: -30px !important;
-    padding-bottom: 80px !important;
+    padding-bottom: 90px !important;
 }
 
 .custom-footer {
@@ -113,4 +113,5 @@ components.html(
     """,
     height=0,
 )
+
 
