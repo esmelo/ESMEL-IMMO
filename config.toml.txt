@@ -8,5 +8,8 @@ font = "sans serif"
 [server]
 headless = true
 
+[client]
+toolbarMode = "minimal"
+
 [ui]
-disableWatchdog = true
+hideTopBar = true
