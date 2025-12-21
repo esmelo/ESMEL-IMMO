@@ -3,7 +3,7 @@ uvicorn
 python-multipart
 jinja2
 pymupdf
-sentence-transformers --no-cache-dir
+sentence-transformers
 torch --index-url https://download.pytorch.org/whl/cpu
 scikit-learn
 pandas
