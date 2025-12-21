@@ -2,6 +2,7 @@ import streamlit as st
 import joblib
 import os
 import numpy as np
+import streamlit.components.v1 as components
 
 st.set_page_config(page_title="𝐄𝐒𝐌𝐄𝐋 IMMO™", layout="centered", page_icon="🏠")
 
@@ -64,12 +65,10 @@ else:
 footer_style = """
 <style>
 footer {visibility: hidden !important;}
-footer:after {content:''; display:none !important;}
 header {visibility: hidden !important;}
 #MainMenu {visibility: hidden !important;}
 .stAppDeployButton {display: none !important;}
 [data-testid="stHeader"] {display: none !important;}
-[data-testid="stToolbar"] {display: none !important;}
 
 .block-container {
     padding-top: 1rem !important;
@@ -95,3 +94,27 @@ header {visibility: hidden !important;}
 </div>
 """
 st.markdown(footer_style, unsafe_allow_html=True)
+
+components.html(
+    """
+    <script>
+    const removeElements = () => {
+        const doc = window.parent.document;
+        const selectors = [
+            'footer',
+            'header',
+            '#MainMenu',
+            '.stAppDeployButton',
+            '[data-testid="stHeader"]',
+            '[data-testid="stStatusWidget"]'
+        ];
+        selectors.forEach(s => {
+            const el = doc.querySelector(s);
+            if (el) el.style.display = 'none';
+        });
+    };
+    setInterval(removeElements, 500);
+    </script>
+    """,
+    height=0,
+)
