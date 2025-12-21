@@ -93,7 +93,7 @@ header, footer, .stAppDeployButton, #MainMenu {
 }
 </style>
 <div class="custom-footer">
-    <span>© 2025 <b>𝐄𝐒𝐌𝐄𝐋 IMMO™</b> | L'Excellence Immobilière | 📍 Abidjan, CI</span>
+    <p>© 2025 <b>𝐄𝐒𝐌𝐄𝐋 IMMO™</b> | Modèle basé sur les réalité de la ville de californie.| Par Kouton Vignon Esmel, M1 Data science & IA, à l'UFR-MI de l'Université Félix Houphouet-Boigny 📍 Abidjan, CI</p>
 </div>
 """
 st.markdown(footer_final, unsafe_allow_html=True)
@@ -113,3 +113,4 @@ components.html(
     """,
     height=0,
 )
+
