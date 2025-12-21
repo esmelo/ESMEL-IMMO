@@ -2,6 +2,7 @@ import streamlit as st
 import joblib
 import os
 import numpy as np
+import streamlit.components.v1 as components
 
 st.set_page_config(page_title="𝐄𝐒𝐌𝐄𝐋 IMMO™", layout="centered", page_icon="🏠")
 
@@ -67,15 +68,8 @@ footer = """
 header {visibility: hidden !important;}
 footer {visibility: hidden !important;}
 .stAppDeployButton {display: none !important;}
-div[data-testid="stStatusWidget"] {display: none !important;}
-div[data-testid="stToolbar"] {display: none !important;}
-div[data-testid="stDecoration"] {display: none !important;}
-
-.block-container {
-    padding-top: 0px !important;
-    margin-top: -20px !important;
-}
-
+[data-testid="stHeader"] {display: none !important;}
+.block-container {padding-top: 0px !important;}
 .footer {
     position: fixed;
     left: 0;
@@ -95,3 +89,16 @@ div[data-testid="stDecoration"] {display: none !important;}
 </div>
 """
 st.markdown(footer, unsafe_allow_html=True)
+
+components.html(
+    """
+    <script>
+    var container = window.parent.document.querySelector('.main');
+    var menu = window.parent.document.querySelector('header');
+    if (menu) { menu.style.display = 'none'; }
+    var toolbar = window.parent.document.querySelector('[data-testid="stToolbar"]');
+    if (toolbar) { toolbar.style.display = 'none'; }
+    </script>
+    """,
+    height=0,
+)
