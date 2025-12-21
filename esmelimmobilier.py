@@ -63,20 +63,17 @@ else:
 
 footer = """
 <style>
-div[data-testid="stToolbar"], 
-div[data-testid="stDecoration"], 
-div[data-testid="stStatusWidget"], 
-#MainMenu, 
-header, 
-footer {
-    visibility: hidden;
-    height: 0%;
-    display: none;
-}
+#MainMenu {visibility: hidden !important;}
+header {visibility: hidden !important;}
+footer {visibility: hidden !important;}
+.stAppDeployButton {display: none !important;}
+div[data-testid="stStatusWidget"] {display: none !important;}
+div[data-testid="stToolbar"] {display: none !important;}
+div[data-testid="stDecoration"] {display: none !important;}
 
 .block-container {
-    padding-top: 0rem;
-    padding-bottom: 5rem;
+    padding-top: 0px !important;
+    margin-top: -20px !important;
 }
 
 .footer {
@@ -90,7 +87,7 @@ footer {
     padding: 10px 0;
     font-size: 14px;
     border-top: 2px solid #D4AF37;
-    z-index: 1000;
+    z-index: 999999;
 }
 </style>
 <div class="footer">
