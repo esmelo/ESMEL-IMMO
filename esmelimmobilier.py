@@ -4,20 +4,22 @@ import os
 import numpy as np
 
 st.set_page_config(page_title="𝐄𝐒𝐌𝐄𝐋 IMMO™", layout="centered", page_icon="🏠")
-st.markdown('<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">', unsafe_allow_html=True)
+
 @st.cache_resource
 def charger_le_modele():
-    if os.path.exists('esmel_modele.joblib'):
-        return joblib.load('esmel_modele.joblib')
+    chemin_actuel = os.path.dirname(__file__)
+    chemin_modele = os.path.join(chemin_actuel, 'esmel_modele.joblib')
+    if os.path.exists(chemin_modele):
+        return joblib.load(chemin_modele)
     return None
 
 model = charger_le_modele()
 
-st.title("🏠 Estimez le prix de votre maison chez 𝐄𝐒𝐌𝐄𝐋 IMMO™")
-st.write("Ajustez les paramètres ci-dessous pour obtenir une estimation immédiate.")
+st.title("🏠 Estimez votre maison chez 𝐄𝐒𝐌𝐄𝐋 IMMO™")
+st.write("Ajustez les paramètres pour obtenir une estimation immédiate.")
 
 if model is None:
-    st.error("❌ Erreur : 'esmel_modele.joblib' introuvable.")
+    st.error("❌ Erreur : Le fichier 'esmel_modele.joblib' est introuvable.")
 else:
     col1, col2 = st.columns(2)
 
@@ -33,9 +35,9 @@ else:
     with col2:
         st.subheader("🏗️ La Maison")
         age = st.slider("Âge de la maison (années)", 1, 52, 28)
-        rms = st.slider("Nombre de pièces", 1, 15, 5)
+        rms = st.slider("Nombre total de pièces", 1, 15, 5)
         brs = st.slider("Nombre de chambres", 1, 10, 1)
-        occ = st.slider("Capacité d'occupation (pers.)", 1, 10, 3)
+        occ = st.slider("Occupants par foyer", 1, 6, 3)
 
     st.write("") 
     
@@ -57,7 +59,7 @@ else:
             st.metric(label="Prix en FCFA", value=f"{format_fcfa} XOF")
             
         st.balloons()
-        st.success('✅ Estimation terminée ! Merci d\'utiliser 𝐄𝐒𝐌𝐄𝐋 IMMO™.')
+        st.success('✅ Estimation terminée !')
 
 footer = """
 <style>
@@ -66,31 +68,20 @@ footer = """
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #f1f1f1;
-    color: #333;
+    background-color: #0E1117;
+    color: #D4AF37;
     text-align: center;
     padding: 10px 0;
     font-size: 14px;
-    border-top: 1px solid #e6e6e6;
+    border-top: 2px solid #D4AF37;
     z-index: 100;
 }
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
 </style>
 <div class="footer">
-    <p>© 2025 Proposé par <b>𝐄𝐒𝐌𝐄𝐋 IMMO™</b> |Créer et entraîner par Kouton Vignon Esmel, M1 Data science & IA à l'UFR-MI de l'Université Félix Houphouët-Boigny. Contact : esmelyann@gmail.com / +225 0505411990 (Whatsapp et appel) | ⚠️Modèle basé sur les realités californiene | 📍 Abidjan, CI</p>
+    <p>© 2025 <b>𝐄𝐒𝐌𝐄𝐋 IMMO™</b> | L'Excellence Immobilière | 📍 Abidjan, CI</p>
 </div>
 """
 st.markdown(footer, unsafe_allow_html=True)
-
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
-  
-
-
-
-
