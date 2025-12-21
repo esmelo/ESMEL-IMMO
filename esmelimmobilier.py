@@ -62,56 +62,54 @@ else:
         st.balloons()
         st.success('✅ Estimation terminée !')
 
-footer_luxe = """
+footer_final = """
 <style>
-/* Cache tout ce qui est possible */
 header, footer, .stAppDeployButton, #MainMenu {
     display: none !important;
     visibility: hidden !important;
 }
 
-/* On remonte le contenu pour ne pas laisser de vide en haut */
 .block-container {
     padding-top: 0px !important;
     margin-top: -30px !important;
-    padding-bottom: 100px !important;
+    padding-bottom: 80px !important;
 }
 
-/* NOTRE BARRE QUI RECOUVRE TOUT EN BAS */
 .custom-footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 50px; /* Hauteur suffisante pour cacher le logo en dessous */
-    background-color: #0E1117; /* Doit être la même couleur que le fond */
+    height: 60px;
+    background-color: #0E1117;
     color: #D4AF37;
     text-align: center;
-    line-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 14px;
     border-top: 2px solid #D4AF37;
-    z-index: 999999999 !important; /* Priorité maximale */
+    z-index: 999999;
 }
 </style>
 <div class="custom-footer">
-    © 2025 <b>𝐄𝐒𝐌𝐄𝐋 IMMO™</b> | L'Excellence Immobilière | 📍 Abidjan, CI
+    <span>© 2025 <b>𝐄𝐒𝐌𝐄𝐋 IMMO™</b> | L'Excellence Immobilière | 📍 Abidjan, CI</span>
 </div>
 """
-st.markdown(footer_luxe, unsafe_allow_html=True)
+st.markdown(footer_final, unsafe_allow_html=True)
 
-# Script de secours pour tenter de supprimer l'élément par son tag
 components.html(
     """
     <script>
-    const hideSreamlit = () => {
-        const pDoc = window.parent.document;
-        const footer = pDoc.getElementsByTagName("footer")[0];
-        if (footer) footer.style.display = "none";
-        const header = pDoc.getElementsByTagName("header")[0];
-        if (header) header.style.display = "none";
+    const hide = () => {
+        const p = window.parent.document;
+        const f = p.querySelector('footer');
+        if (f) f.style.display = 'none';
+        const h = p.querySelector('header');
+        if (h) h.style.display = 'none';
     }
-    setInterval(hideSreamlit, 300);
+    setInterval(hide, 200);
     </script>
     """,
     height=0,
-)
+)s
